@@ -1,0 +1,20 @@
+
+###
+
+curl -X POST \
+  'https://allegro.pl/auth/oauth/device' \
+  -H 'Authorization: Basic OTg5ZTU5NjBjZDIzNGY3Nzk1YjFjMTZhYWJmMmY4MTg6RmJ3dHpzNjlCOHpZSDFGQ0E3OUtHR1dCQWhYbE9hUXBjQ1kxU0gzbm85UVppZFBsTG1ObmhRUUJHblVENFFiSg==' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d 'client_id=989e5960cd234f7795b1c16aabf2f818'
+
+###
+  curl -X POST \
+      'https://allegro.pl/auth/oauth/token?grant_type=client_credentials' \
+      -H 'Authorization: Basic ZmE2MWRhZTk2NjZmNDYwMGFhYjE4OThhZjEyY2ZmOWI6M1VDUGE4cFdyUXppNjN2SzRhNWdYQ1hNaDhJVU9LQnBqcHN2QThQZ0tmUFYwekdvUzRadnprU3ZBclRFMnFsdA=='
+
+###
+
+curl -X GET  \
+      'https://api.allegro.pl/sale/categories' \
+      -H 'Authorization: bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJhbGxlZ3JvOmFwaTpvcmRlcnM6cmVhZCIsImFsbGVncm86YXBpOnByb2ZpbGU6d3JpdGUiLCJhbGxlZ3JvOmFwaTpzYWxlOm9mZmVyczp3cml0ZSIsImFsbGVncm86YXBpOmJpbGxpbmc6cmVhZCIsImFsbGVncm86YXBpOmNhbXBhaWducyIsImFsbGVncm86YXBpOmRpc3B1dGVzIiwiYWxsZWdybzphcGk6c2FsZTpvZmZlcnM6cmVhZCIsImFsbGVncm86YXBpOmJpZHMiLCJhbGxlZ3JvOmFwaTpvcmRlcnM6d3JpdGUiLCJhbGxlZ3JvOmFwaTphZHMiLCJhbGxlZ3JvOmFwaTpwYXltZW50czp3cml0ZSIsImFsbGVncm86YXBpOnNhbGU6c2V0dGluZ3M6d3JpdGUiLCJhbGxlZ3JvOmFwaTpwcm9maWxlOnJlYWQiLCJhbGxlZ3JvOmFwaTpyYXRpbmdzIiwiYWxsZWdybzphcGk6c2FsZTpzZXR0aW5nczpyZWFkIiwiYWxsZWdybzphcGk6cGF5bWVudHM6cmVhZCJdLCJhbGxlZ3JvX2FwaSI6dHJ1ZSwiZXhwIjoxNjE3NTIzMTUyLCJqdGkiOiJiYzJjOGVkZi00OGQ1LTQ4NmQtOTgzZS05YjEzMjg3NjE5OTkiLCJjbGllbnRfaWQiOiJmYTYxZGFlOTY2NmY0NjAwYWFiMTg5OGFmMTJjZmY5YiJ9.XKByPYDyUj57I9_BsqfdVpnR2hAzvt2hTMUnNztXiBorcDJ2jQeZ34TgsiQcq8kmgYxYnDwySTggDLhDCGTJO3wvi9TfE52Tpg0KFlJe34Yav4D0yQqOesIHm6FkSeqTIqvKGU11b2GKbhykCn8gQYqvpdB62SZT144q709RyuPvXyFgzwXNlWEbH_647Uc9CMFHjfiTfNzRp0v45jnT6DSTBakC2HneEYq5UzlFYRpl37WypM2EbwWoncpMxaiCsDMm222J9q8uyIREBdEyUPwc4sJBL_46QSKVG6aI67064inmvTaOx89lAGWpDD3-WYv4_zV8ykR5A4_lZSOvNA'
+
