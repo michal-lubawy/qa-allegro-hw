@@ -22,9 +22,9 @@ beforeAll(async () => {
   categoryId = await getRandomCategory();
 });
 
-describe('Get a category by ID endpoint', () => {
+describe("Get a category by ID endpoint", () => {
   it("returns the details of a specific category", async () => {
-    category = await getCategoryById(categoryId);    
+    category = await getCategoryById(categoryId);
     const receivedId = category.body.id;
     const { parent } = category.body;
     expect(receivedId).toEqual(categoryId);
