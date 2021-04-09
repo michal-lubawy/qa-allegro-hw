@@ -1,0 +1,3 @@
+curl -X GET  \
+      'https://api.allegro.pl/sale/categories' \
+      -H 'Authorization: bearer {MANUALLY FILL TOKEN FROM AUTH REQU}'

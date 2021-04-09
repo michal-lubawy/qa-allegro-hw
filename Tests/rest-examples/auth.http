@@ -1,0 +1,13 @@
+
+###
+
+curl -X POST \
+  'https://allegro.pl/auth/oauth/device' \
+  -H 'Authorization: Basic OTg5ZTU5NjBjZDIzNGY3Nzk1YjFjMTZhYWJmMmY4MTg6RmJ3dHpzNjlCOHpZSDFGQ0E3OUtHR1dCQWhYbE9hUXBjQ1kxU0gzbm85UVppZFBsTG1ObmhRUUJHblVENFFiSg==' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d 'client_id=989e5960cd234f7795b1c16aabf2f818'
+
+###
+  curl -X POST \
+      'https://allegro.pl/auth/oauth/token?grant_type=client_credentials' \
+      -H 'Authorization: Basic ZmE2MWRhZTk2NjZmNDYwMGFhYjE4OThhZjEyY2ZmOWI6M1VDUGE4cFdyUXppNjN2SzRhNWdYQ1hNaDhJVU9LQnBqcHN2QThQZ0tmUFYwekdvUzRadnprU3ZBclRFMnFsdA=='
