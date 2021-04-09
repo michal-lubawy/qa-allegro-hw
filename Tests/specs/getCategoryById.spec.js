@@ -1,25 +1,41 @@
-import { getToken } from '../helpers/getToken';
-import { config } from '../helpers/config';
+import { matchers } from "jest-json-schema";
+import { getToken } from "../helpers/getTokenHelper";
+import { config } from "../helpers/config";
+import { categoryByIdSchema } from "../helpers/schema";
+import { getCategoryById } from "../helpers/getCategoryByIdHelper";
 
-const apiUrl = 'https://api.allegro.pl';
-const supertest = require('supertest');
+const supertest = require("supertest");
 
 const apiRequest = supertest(config.api.url);
 
 let token;
 let category;
+let categories;
+let categoryId;
 
 beforeAll(async () => {
   token = await getToken();
+  categories = await apiRequest
+    .get("/sale/categories")
+    .auth(token, { type: "bearer" })
+    .expect(200);
+  categoryId = await getRandomCategory();
 });
 
-it('Gets the test endpoint', async () => {
-  category = await getCategoryById(11763);
-  console.log(category.body);
+describe('Get a category by ID endpoint', () => {
+  it("returns the details of a specific category", async () => {
+    category = await getCategoryById(categoryId);    
+    const receivedId = category.body.id;
+    const { parent } = category.body;
+    expect(receivedId).toEqual(categoryId);
+    expect(parent).toBe(null);
+    expect.extend(matchers);
+    expect(category.body).toMatchSchema(categoryByIdSchema);
+  });
 });
 
-async function getCategoryById(id) {
-  const res = await apiRequest.get(`/sale/categories/${id}`).auth(token, { type: 'bearer' }).expect(200);
-  console.log(res.body);
-  return res;
+async function getRandomCategory() {
+  const randomIdInRange =
+    Math.floor(Math.random() * (categories.body.categories.length - 1 + 1)) + 1;
+  return categories.body.categories[randomIdInRange].id;
 }
