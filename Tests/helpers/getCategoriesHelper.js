@@ -9,9 +9,11 @@ let token;
 
 async function getCategories() {
   token = await getToken();
+  const path = "/sale/categories"
   const res = await apiRequest
-    .get("/sale/categories")
+    .get(path)
     .auth(token, { type: "bearer" })
+    .expect((res) => (res.status != 200 ? console.log(`Call to ${path} failed `+JSON.stringify(res.body, null, 2)) : 0))
     .expect(200);
   return res;
 }
