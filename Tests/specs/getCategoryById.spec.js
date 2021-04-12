@@ -18,6 +18,7 @@ beforeAll(async () => {
   categories = await apiRequest
     .get("/sale/categories")
     .auth(token, { type: "bearer" })
+    .expect((res) => (res.status != 200 ? console.log(res.body) : 0))
     .expect(200);
   categoryId = await getRandomCategory();
 });
@@ -25,7 +26,7 @@ beforeAll(async () => {
 describe("Get a category by ID endpoint", () => {
   it("returns the details of a specific category", async () => {
     category = await getCategoryById(categoryId);
-    const receivedId = category.body.id;
+    const receivedId = category.body.id;    
     const { parent } = category.body;
     expect(receivedId).toEqual(categoryId);
     expect(parent).toBe(null);

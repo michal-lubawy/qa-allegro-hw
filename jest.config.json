@@ -5,6 +5,17 @@
     "^.+\\.js$": "babel-jest",
     "^.+\\.mjs$": "babel-jest"
   },
+  "reporters": [
+    "default",
+    [
+      "jest-html-reporters",
+      {
+        "publicPath": "./tests/results",
+        "filename": "report.html",
+        "expand": true
+      }
+    ]   
+  ],
 
   "testRegex": "((\\.|/*.)(spec))\\.js?$"
 }
