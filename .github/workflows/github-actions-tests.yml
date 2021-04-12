@@ -1,5 +1,5 @@
 name: GitHub Actions Tests
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 jobs:
   Run-the-tests:
 

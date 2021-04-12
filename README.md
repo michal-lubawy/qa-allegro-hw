@@ -2,15 +2,25 @@
 
 Test contained here use jest as a test runner and super tests for preforming requests.
 
-##
-
 ## Requirements
 
 Developed and tested on node v10.20.1
 And Windows 10 os
 
-## How To
+## CI 
+The tests are run using github actions workflow on Linux ubuntu-18.04 and using node version: 10.x, 12.x
+Tests are run on push and PR. Results of test can be viewed It [Actions tab](https://github.com/michal-lubawy/qa-allegro-hw/actions)
 
+### HTML report
+A nice HTML report from tests is published as job artifact 
+![HTML Report](readmePictures\Screenshot.png)
+
+
+## How To
+### Run on CI
+The test are run automatically on code push.
+
+### Running locally 
 Before running the tests run `npm install` in the main folder of tests.
 
 to run tests run `npm run test`.
