@@ -14,7 +14,7 @@ Tests are run on push and PR. Results of test can be viewed It [Actions tab](htt
 ### HTML report
 A nice HTML report from tests is published as job artifact for download
 ![HTML Report](/readmePictures/Screenshot.png)
-The last test result can be viewed [online TML report](https://michal-lubawy.github.io/qa-allegro-hw/report).
+The last test result can be viewed in [online HTML report](https://michal-lubawy.github.io/qa-allegro-hw/report).
 
 
 ## How To
