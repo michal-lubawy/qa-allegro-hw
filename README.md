@@ -12,8 +12,9 @@ The tests are run using github actions workflow on Linux ubuntu-18.04 and using 
 Tests are run on push and PR. Results of test can be viewed It [Actions tab](https://github.com/michal-lubawy/qa-allegro-hw/actions)
 
 ### HTML report
-A nice HTML report from tests is published as job artifact 
+A nice HTML report from tests is published as job artifact for download
 ![HTML Report](/readmePictures/Screenshot.png)
+The last test result can be viewed [online TML report](https://michal-lubawy.github.io/qa-allegro-hw/report).
 
 
 ## How To
