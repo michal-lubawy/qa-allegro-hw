@@ -27,4 +27,17 @@ jobs:
       with:
         name: report.html
         path: tests/results/
-        if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`       
+        if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn` 
+    - name: Copy test execution report
+      run: |
+        mkdir public
+        cp -r tests/results/report.html public
+    - name: Deploy report page
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'  
+
+      
